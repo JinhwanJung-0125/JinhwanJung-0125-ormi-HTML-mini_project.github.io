@@ -1,0 +1,376 @@
+.txt-hide {
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+}
+.modal-hidden {
+    display: none;
+}
+
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Pretendard Variable";
+}
+
+
+
+
+header nav, .introduce-paragraph, .first-section, .inf-scroll-section, .line,
+.map-section, .subscribe-section, footer nav {
+    width: 80%;
+}
+
+
+
+
+header {
+    background-color: #F2E9D8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 26px;
+    align-items: center;
+    vertical-align: baseline;
+}
+header nav img {
+    width: 130px;
+    height: 40px;
+}
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/*높이가 다른 li 정렬하는 법*/
+header nav li {
+    display: inline-block;
+    letter-spacing: 0;
+    vertical-align: middle;
+    margin-left: 30px;
+}
+header nav li a {
+    text-decoration-line: none;
+    color: black;
+}
+.introduce-paragraph {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.introduce-paragraph .download-btn {
+    margin-top: 2em;
+    margin-left: 0;
+}
+.introduce-paragraph div h2 {
+    font-size: 48px;
+}
+.introduce-paragraph p {
+    margin: 0;
+}
+header img {
+    width: 415px;
+}
+.download-btn, .show-more-btn, .subscribe-btn, .love-hodu-btn {
+    width: 140px;
+    height: 50px;
+    border: 0;
+    border-radius: 40px;
+    background-color: #D97652;
+    color: white;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+
+
+
+main {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.first-section {
+    margin-top: 50px;
+}
+.first-section-style {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.first-section-style img {
+    width: 660px;
+    border-radius: 30px;
+    margin-right: 221px;
+    box-shadow: 10px 10px 25px gray;
+}
+.first-section-paragraph h3 {
+    font-size: 36px;
+}
+
+
+
+
+
+.inf-scroll-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px;
+}
+.inf-scroll-section-paragraph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inf-scroll-section-paragraph > h3 {
+    color: #D97652;
+    font-size: 48px;
+}
+.inf-scroll-section-paragraph p {
+    margin: 0;
+}
+.inf-scroll-section-paragraph p > strong {
+    color: #D97652;
+}
+.inf-scroll {
+    width: 100%;
+}
+.inf-scroll div {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+.inf-scroll img {
+    width: 378px;
+    border-radius: 30px;
+    box-shadow: 10px 10px 25px gray;
+}
+.show-more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+.show-more p {
+    font-size: 24px;
+}
+.show-more-btn {
+    margin: 0;
+}
+
+
+
+
+
+.line {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+
+
+
+
+.map-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+.location-info h3 {
+    font-size: 36px;
+}
+.location-info p {
+    font-weight: 500;
+}
+.map {
+    display: flex;
+    width: 1000px;
+    height: 520px;
+    align-self: center;
+}
+
+
+
+
+
+.subscribe-section {
+    background-color: #263140;
+    border-radius: 30px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -100px;
+    overflow: hidden;
+}
+.subscribe-section-paragraph h3 {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.subscribe-section-paragraph p {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.subscribe-section-style {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+.subscribe-section-paragraph {
+    color: white;
+    margin-right: 50px;
+}
+.subscribe-input {
+    background-color: white;
+    border-radius: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+.subscribe-input img {
+    width: 24px;
+    margin-left: 30px;
+}
+.email-input {
+    margin-left: 10px;
+    border: 0;
+    font-size: 16px;
+}
+.email-input:focus {
+    outline: none;
+}
+.subscribe-btn {
+    margin-right: 5px;
+}
+
+
+
+
+
+.modal {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -150px;
+}
+.modal-img, .modal-paragraph, .love-hodu-btn {
+    position: relative;
+    z-index: 1;
+}
+.modal-img {
+    width: 110px;
+    margin-top: 60px;
+}
+.modal-paragraph {
+    text-align: center;
+}
+.modal-paragraph h3 {
+    font-size: 36px;
+    color: #D97652;
+    margin-bottom: 10px;
+}
+.modal-paragraph p {
+    margin-top: 10px;
+}
+.love-hodu-btn {
+    width: 180px;
+    margin-top: 10px;
+    margin-left: 0;
+}
+.modal-bg {
+    width: 600px;
+    position: absolute;
+    border-radius: 30px;
+    z-index: 0;
+}
+
+
+
+
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer > img {
+    width: 100%;
+}
+footer nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    align-items: center;
+    vertical-align: baseline;
+}
+footer nav > img {
+    width: 226px;
+    height: 70px;
+}
+footer nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/*높이가 다른 li 정렬하는 법*/
+footer nav li {
+    display: inline-block;
+    letter-spacing: 0;
+    vertical-align: middle;
+    margin-left: 30px;
+}
+footer nav li img {
+    width: 42px;
+}
+footer nav li a {
+    text-decoration-line: none;
+    color: black;
+}
