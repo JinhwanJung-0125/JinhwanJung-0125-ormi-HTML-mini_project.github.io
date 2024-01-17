@@ -1,5 +1,3 @@
-const inf_scroll = document.querySelector(".inf-scroll");
-
 // 이미지 정보를 받는다.
 // 다만, 네트워크 에러 등의 이유로 이미지를 받지 못했다면 대신 에러 메시지를 html 문서에 추가한다.
 async function fetchImages(pageNum)  {
@@ -24,8 +22,9 @@ async function fetchImages(pageNum)  {
     return true;
 }
 
-// data로 받은 이미지 정보를 html 문서에 추가한다.
+// data로 받은 이미지 정보를 html 문서의 fetched 클래스 요소 및에 추가한다.
 function addImages(data) {
+    const inf_scroll_fetched = document.querySelector(".fetched");
     let insert_HTML_elem = `<div class="img-line-style">`;
 
     data.forEach((item, idx) => {
@@ -34,7 +33,7 @@ function addImages(data) {
         // 이미지 한 줄 당 3개씩 넣고 개행
         if(idx === 2 || idx === 5) {
             insert_HTML_elem += `</div>`;
-            inf_scroll.insertAdjacentHTML("beforeend", insert_HTML_elem);
+            inf_scroll_fetched.insertAdjacentHTML("beforeend", insert_HTML_elem);
             insert_HTML_elem = `<div class="img-line-style">`;
         }
     })
@@ -44,7 +43,7 @@ function addImages(data) {
 function throttle(callback, delay = 500) {
     let timer = undefined;
 
-    return () => {
+    return function throttling(){
         if (!timer) {
             timer = setTimeout(() => {
                 callback();
