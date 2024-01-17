@@ -21,7 +21,7 @@
             </ul>
         </nav>
         <section class="introduce-paragraph">
-            <div>
+            <div class="introduce-paragraph-style">
                 <h2>Lorem Ipsum is simply
                     dummy text of the printing and</h2>
                 <p>
@@ -86,9 +86,21 @@
             <h2 class="txt-hide">지도 영역</h2>
             <section class="location-info">
                 <h3>Where you'll be</h3>
-                <p>330, cheromdon-ro, Jeju-do, Republic of Korea</p>
+                <p class="location">330, cheromdon-ro, Jeju-do, Republic of Korea</p>
             </section>
-            <div class="map"></div>
+            <div class="map-wrap">
+                <div class="map"></div>
+                <!-- 지도타입 컨트롤 div 입니다 -->
+                <div class="custom_typecontrol radius_border">
+                    <span class="selected_btn">지도</span>
+                    <span class="btn">스카이뷰</span>
+                </div>
+                <!-- 지도 확대, 축소 컨트롤 div 입니다 -->
+                <div class="custom_zoomcontrol radius_border">
+                    <span class="zoom-in"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>
+                    <span class="zoom-out"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+                </div>
+            </div>
         </section>
         <section class="subscribe-section">
             <h2 class="txt-hide">구독 구역</h2>
@@ -145,6 +157,8 @@
             </ul>
         </nav>
     </footer>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=31bad587b2ccc21fbf57ee6476238447"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=31bad587b2ccc21fbf57ee6476238447&libraries=services"></script>
+    <script type="text/javascript" src="./js/map.js"></script>
+    <script type="text/javascript" src="js/mapControls.js"></script>
 </body>
 </html>
