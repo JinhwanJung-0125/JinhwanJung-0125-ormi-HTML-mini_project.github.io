@@ -1,3 +1,5 @@
+/* 무한 스크롤 기능 구현에 사용되는 함수들 */
+
 /**
  * fetch API를 통해 한번에 6장의 이미지 정보를 받는다.<br>
  * pageNum을 통해 API에서 제공하는 이미지를 몇 페이지에서 받을 지 결정할 수 있다.<br>
@@ -27,7 +29,11 @@ async function fetchImages(pageNum)  {
     return true;
 }
 
-// data로 받은 이미지 정보를 html 문서의 fetched 클래스 요소 및에 추가한다.
+/**
+ * data로 받은 이미지 정보를 html 문서의 fetched 클래스 요소 및에 추가한다.<br>
+ * 이때, 이미지는 3장 단위로 한 줄을 형성해 추가한다.
+ * @param data : JSON
+ */
 function addImages(data) {
     const inf_scroll_fetched = document.querySelector(".fetched");
     let insert_HTML_elem = `<div class="img-line-style">`;
@@ -35,7 +41,7 @@ function addImages(data) {
     data.forEach((item, idx) => {
         insert_HTML_elem += `<img src="https://cataas.com/cat/${item._id}?position=centre" alt="">`;
 
-        // 이미지 한 줄 당 3개씩 넣고 개행
+        // 이미지는 한 줄 당 3개씩 넣고 개행
         if(idx === 2 || idx === 5) {
             insert_HTML_elem += `</div>`;
             inf_scroll_fetched.insertAdjacentHTML("beforeend", insert_HTML_elem);
@@ -44,7 +50,14 @@ function addImages(data) {
     })
 }
 
-// 쓰로틀링 함수
+/**
+ * scroll 이벤트의 발생 빈도를 조절하는 쓰로틀링 함수.<br>
+ * scroll 이벤트 발생 시 실행할 이벤트 헨들러 callback 함수와 발생 빈도를 조절하는 delay 값을 인자로 받는다.<br>
+ * return 값으로 이벤트 리스너에 등록할 이벤트 헨들러(익명함수)를 반환한다.
+ * @param callback : callback
+ * @param delay : number
+ * @returns {(function(): void)|*}
+ */
 function throttle(callback, delay = 500) {
     let timer = undefined;
 
@@ -58,16 +71,19 @@ function throttle(callback, delay = 500) {
     };
 }
 
-// 현재 스크롤 위치가 기준선을 넘었다면
-// 스크롤 위치를 이미지 로딩 직전 위치로 이동시킨 후
-// 이미지를 로딩한다.
+/**
+ * 현재 스크롤의 위치가 일정 기준선을 넘었다면 <br>
+ * 스크롤 위치를 이미지 로딩 직전 위치로 이동시킨 후, 이미지를 로딩한다.
+ */
 function resetScrollPosAndFetchImg() {
-    const inner_height = window.innerHeight;
-    const scroll_top = document.documentElement.scrollTop;
-    const threshold = document.documentElement.offsetHeight;
+    const inner_height = window.innerHeight;    // 사용자 화면 높이
+    const scroll_top = document.documentElement.scrollTop;  // 현재 사용자의 스크롤 바 위치
+    const threshold = document.documentElement.offsetHeight;    // 문서의 총 높이
 
-    const current_height = inner_height + scroll_top;
+    const current_height = inner_height + scroll_top;   // 문서 상에서의 사용자 현재 위치
 
+    // 사용자 현재 위치 + 1500 값이 기준선 이상이면
+    // 사용자 현재 위치 - 1500 으로 이동시킨 뒤, 이미지를 정보를 받아온다.
     if(current_height + 1500 >= threshold) {
         window.scrollTo({
             top: current_height - 1500,
