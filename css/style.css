@@ -27,7 +27,7 @@ body {
 
 
 header nav, .introduce-paragraph, .first-section, .inf-scroll-section, .line,
-.map-section, .subscribe-section, footer nav {
+.subscribe-section, footer nav {
     width: 80%;
 }
 

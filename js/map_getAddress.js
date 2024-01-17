@@ -15,6 +15,7 @@ kakao.maps.event.addListener(map, "click", function (mouseEvent) {
     });
 })
 
+// geocoder 객체의 coord2Address()로 해당 좌표의 지번을 얻는다.
 function searchAddrFromCoords(coords, callback) {
     geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
 }
