@@ -1,8 +1,5 @@
 const location_info = document.querySelector(".location");
 
-// 주소-좌표 변환 객체 생성
-const geocoder = new kakao.maps.services.Geocoder();
-
 // 지도 클릭 시 해당 위치의 지번 표시
 kakao.maps.event.addListener(map, "click", function (mouseEvent) {
     searchAddrFromCoords(mouseEvent.latLng, function(result, status) {
@@ -14,8 +11,3 @@ kakao.maps.event.addListener(map, "click", function (mouseEvent) {
         }
     });
 })
-
-// geocoder 객체의 coord2Address()로 해당 좌표의 지번을 얻는다.
-function searchAddrFromCoords(coords, callback) {
-    geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
-}
