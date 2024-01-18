@@ -11,6 +11,9 @@
 .show-more-hidden, .close-hidden {
     display: none;
 }
+.scroll-top-btn-hover {
+    display: none;
+}
 
 
 
@@ -360,6 +363,27 @@ main {
     border-radius: 30px;
     z-index: 0;
 }
+
+
+
+
+.hover {
+    position: fixed;
+    z-index: 30;
+    right: 50px;
+    bottom: 50px;
+}
+.scroll-top-btn, .scroll-top-btn-hover {
+    width: 70px;
+    height: 70px;
+}
+.hover:hover .scroll-top-btn {
+    display: none;
+}
+.hover:hover .scroll-top-btn-hover {
+    display: inline;
+}
+
 
 
 
