@@ -1,3 +1,5 @@
+const roadmap = document.querySelector(".roadmap");
+const skyview = document.querySelector(".skyview");
 const zoom_in = document.querySelector(".zoom-in");
 const zoom_out = document.querySelector(".zoom-out");
 
@@ -11,5 +13,11 @@ skyview.addEventListener("click", (event) => {
     setMapType(event, "skyview");
 });
 
-zoom_in.addEventListener("click", zoomIn);
-zoom_out.addEventListener("click", zoomOut);
+// 지도 확대 버튼의 이벤트 리스너 -> 외부 JS 파일로 호출이 안돼 익명 함수로 대체함.
+zoom_in.addEventListener("click", () => {
+    map.setLevel(map.getLevel() - 1);
+});
+// 지도 축소 버튼의 이벤트 리스너 -> 외부 JS 파일로 호출이 안돼 익명 함수로 대체함.
+zoom_out.addEventListener("click", () => {
+    map.setLevel(map.getLevel() + 1);
+});
