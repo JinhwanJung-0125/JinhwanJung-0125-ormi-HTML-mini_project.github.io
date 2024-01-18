@@ -10,14 +10,12 @@ let page = 0;
 // 이때, 핸들러는 AboutSignal에 abort()가 발생하면 삭제된다.
 show_more_btn.addEventListener("click", async (event) => {
     const show_more = document.querySelector(".show-more");
-
-    show_more.classList.replace("show-more", "show-more-hidden");
+    show_more.className = "show-more-hidden";
 
     // fetch가 성공적으로 이루어졌을 때에만 scroll 이벤트 리스너를 추가한다.
     if(await fetchImages(page++)) {
         const close_section = document.querySelector(".close-hidden");
-
-        close_section.classList.replace("close-hidden", "close");
+        close_section.className = "close";
 
         window.addEventListener("scroll", throttle(resetScrollPosAndFetchImg, 1000), {
             signal: removeScrollSignal.signal
@@ -40,6 +38,6 @@ close_btn.addEventListener("click", () => {
     removeScrollSignal = new AbortController();
     page = 0;
 
-    show_more.classList.replace("show-more-hidden", "show-more");
-    close.classList.replace("close", "close-hidden");
+    show_more.className = "show-more";
+    close.className = "close-hidden";
 });
