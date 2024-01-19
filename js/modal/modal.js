@@ -16,7 +16,7 @@ subscribe_btn.addEventListener("click", () => {
 
     // 감춰진 모달을 띄운다.
     const modal = document.querySelector(".modal-hidden");
-    modal.classList.replace("modal-hidden", "modal");
+    modal.className = "modal";
 });
 
 // 모달 버튼의 이벤트 헨들러
@@ -24,5 +24,5 @@ subscribe_btn.addEventListener("click", () => {
 love_hodu_btn.addEventListener("click", () => {
     // 모달을 다시 감춘다.
     const modal = document.querySelector(".modal");
-    modal.classList.replace("modal", "modal-hidden");
+    modal.className = "modal-hidden";
 });
