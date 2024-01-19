@@ -51,7 +51,7 @@ function addImages(data) {
     let insert_HTML_elem = `<div class="img-line-style">`;
 
     data.forEach((item, idx) => {
-        insert_HTML_elem += `<img src="https://cataas.com/cat/${item._id}?position=centre" alt="">`;
+        insert_HTML_elem += `<img src="https://cataas.com/cat/${item._id}?position=centre&type=small" alt="" loading="lazy" decoding="async">`;
 
         // 이미지는 한 줄 당 3개씩 넣고 개행
         if(idx === 2 || idx === 5) {
