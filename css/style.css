@@ -32,8 +32,8 @@ body {
 
 
 
-header nav, .introduce-paragraph, .first-section, .inf-scroll-section, .line,
-.subscribe-section, footer nav {
+header nav, .introduce-paragraph, .first-section,
+.inf-scroll-section, .line, footer nav {
     width: 80%;
 }
 
