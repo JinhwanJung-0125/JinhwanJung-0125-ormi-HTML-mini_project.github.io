@@ -84,6 +84,7 @@ header nav li a {
 .introduce-paragraph .download-btn {
     margin-top: 2em;
     margin-left: 0;
+    text-decoration-line: none;
 }
 .introduce-paragraph-style h2 {
     font-size: 48px;
@@ -104,6 +105,11 @@ header img {
     margin-left: 20px;
     font-size: 16px;
     font-weight: 700;
+}
+.download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
